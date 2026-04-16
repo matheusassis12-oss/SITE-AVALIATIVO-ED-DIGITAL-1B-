@@ -1,0 +1,166 @@
+/* --- CONFIGURAÇÕES E VARIÁVEIS (:root) --- */
+:root {
+    /* Cores Principais - Edite aqui */
+    --primary: #2d5a27;
+    --secondary: #eaf4e9;
+    --accent: #d4a373;
+    --text: #333333;
+    --bg: #ffffff;
+    
+    /* UI System */
+    --radius: 12px;
+    --gap: 1.5rem;
+    --transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    --font-base: 18px; /* Controlado pelo JS */
+}
+
+/* --- MODO ALTO CONTRASTE --- */
+body.high-contrast {
+    --primary: #ffff00;
+    --secondary: #000000;
+    --accent: #ffffff;
+    --text: #ffffff;
+    --bg: #000000;
+}
+
+/* --- RESET E ACESSIBILIDADE --- */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+.skip-link {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    background: var(--accent);
+    color: white;
+    padding: 8px;
+    z-index: 100;
+    transition: top 0.3s;
+}
+.skip-link:focus { top: 0; }
+
+body {
+    font-size: var(--font-base);
+    font-family: 'Segoe UI', system-ui, sans-serif;
+    line-height: 1.6;
+    color: var(--text);
+    background-color: var(--bg);
+    transition: var(--transition);
+}
+
+/* --- LAYOUT NAV --- */
+header {
+    padding: 1rem 5%;
+    background: var(--primary);
+    color: white;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.a11y-controls button {
+    background: rgba(255,255,255,0.1);
+    border: 1px solid white;
+    color: white;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 4px;
+    margin-left: 5px;
+}
+
+/* --- HERO SECTION --- */
+.hero {
+    padding: 5rem 5%;
+    text-align: center;
+    background: var(--secondary);
+    color: var(--primary);
+}
+
+/* --- GRID DE SERVIÇOS (MODIFICAR AQUI) --- */
+.grid-container {
+    display: grid;
+    gap: var(--gap);
+    padding: 4rem 5%;
+    /* Mobile: 1 coluna | Tablet/Desktop: Ajuste automático */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+.card {
+    padding: 2rem;
+    border: 2px solid var(--secondary);
+    border-radius: var(--radius);
+    transition: var(--transition);
+    opacity: 0; /* Para o Scroll Reveal */
+    transform: translateY(30px);
+}
+
+.card.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* --- CARROSSEL --- */
+.carousel {
+    max-width: 900px;
+    margin: 2rem auto;
+    position: relative;
+    padding: 0 5%;
+}
+
+.carousel-track-container {
+    overflow: hidden;
+    border-radius: var(--radius);
+}
+
+.carousel-track {
+    display: flex;
+    list-style: none;
+    transition: transform 0.5s ease-in-out;
+}
+
+.carousel-slide {
+    min-width: 100%;
+    padding: 3rem;
+    background: var(--primary);
+    color: white;
+    text-align: center;
+}
+
+/* --- ACORDEÃO (FAQ) --- */
+.faq-list { max-width: 800px; margin: 2rem auto; padding: 0 5%; }
+
+.faq-item {
+    border-bottom: 1px solid var(--secondary);
+    margin-bottom: 0.5rem;
+}
+
+.faq-trigger {
+    width: 100%;
+    padding: 1.5rem;
+    text-align: left;
+    background: none;
+    border: none;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    color: var(--primary);
+    display: flex;
+    justify-content: space-between;
+}
+
+.faq-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+    padding: 0 1.5rem;
+}
+
+.faq-content.open {
+    max-height: 200px;
+    padding-bottom: 1.5rem;
+}
