@@ -1,5 +1,6 @@
 # SITE-AVALIATIVO-ED-DIGITAL-1B-
-A Copa do Mundo FIFA é o principal torneio de futebol entre seleções nacionais. Ela acontece a cada quatro anos desde 1930 (com exceção de 1942 e 1946, por causa da Segunda Guerra Mundial).
+tudo as copa do mundo
+Copa do Mundo FIFA é o principal torneio de futebol entre seleções nacionais. Ela acontece a cada quatro anos desde 1930 (com exceção de 1942 e 1946, por causa da Segunda Guerra Mundial).
 
 Todos os campeões da Copa do Mundo
 Ano	País-sede	Campeão	Vice-campeão
